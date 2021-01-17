@@ -16,11 +16,12 @@ public class TestController {
     @GetMapping("/test/{test}")
     public String test(@PathVariable("test") String test){
         System.out.println(" 测试成功 : " + test);
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 100; i++) {
             int finalI = i;
             new Thread(()-> {
                 System.out.println("finalI = " + finalI);
-                kafkaTemplate.send("signed", "消息来了 " + finalI);
+               // kafkaTemplate.send("signed", "消--息 " + finalI);
+                kafkaTemplate.send("ssss", "消--息 " + finalI);
             }).start();
         }
        // Object o = send.get();

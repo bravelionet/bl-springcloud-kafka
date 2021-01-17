@@ -16,10 +16,11 @@ public class EhrAgreementListener {
     }*/
 
     @KafkaListener(topics = {"signed"}, groupId = "myContainer2")
+//    @KafkaListener(topics = {"signed","ssss"}, groupId = "myContainer3")
     public void signed2(ConsumerRecord<String, String> record) {
         String value = record.value();
         System.out.println("value = " + value);
-        System.out.println(" groupId = myContainer2, message = " + record.toString());
+        //  System.out.println(" groupId = myContainer2, message = " + record.toString());
     }
 
 }
