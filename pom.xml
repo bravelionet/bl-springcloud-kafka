@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.bravelionet</groupId>
+    <artifactId>bl-springcloud-kafka</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>kafka-consume</module>
+        <module>kafka-production</module>
+
+    </modules>
+    <properties>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring-boot-version>2.3.6.RELEASE</spring-boot-version>
+        <spring-web-version>2.3.8.RELEASE</spring-web-version>
+    </properties>
+    <dependencyManagement>
+      <dependencies>
+          <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-dependencies</artifactId>
+              <version>${spring-cloud.version}</version>
+              <type>pom</type>
+              <scope>import</scope>
+          </dependency>
+
+          <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-dependencies</artifactId>
+              <version>2.2.5.RELEASE</version>
+              <type>pom</type>
+              <scope>import</scope>
+          </dependency>
+
+
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-web</artifactId>
+              <version>${spring-web-version}</version>
+          </dependency>
+
+          <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-stream-kafka -->
+          <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-starter-stream-kafka</artifactId>
+              <version>3.0.10.RELEASE</version>
+          </dependency>
+
+      </dependencies>
+
+
+
+    </dependencyManagement>
+
+</project>
